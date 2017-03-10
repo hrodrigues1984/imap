@@ -1,9 +1,10 @@
 IMAP library
 ============
-[![Build Status](https://travis-ci.org/ddeboer/imap.svg?branch=master)](https://travis-ci.org/ddeboer/imap)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ddeboer/imap/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ddeboer/imap/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/ddeboer/imap/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ddeboer/imap/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/ddeboer/imap/v/stable.svg)](https://packagist.org/packages/ddeboer/imap) 
+[![Build Status](https://travis-ci.org/hrodrigues1984/imap.svg?branch=master&format=flat)](https://travis-ci.org/hrodrigues1984/imap)
+[![Latest Stable Version](https://poser.pugx.org/hrodrigues1984/imap/v/stable)](https://packagist.org/packages/hrodrigues1984/imap)
+[![Total Downloads](https://poser.pugx.org/hrodrigues1984/imap/downloads)](https://packagist.org/packages/hrodrigues1984/imap)
+[![Latest Unstable Version](https://poser.pugx.org/hrodrigues1984/imap/v/unstable)](https://packagist.org/packages/hrodrigues1984/imap)
+[![License](https://poser.pugx.org/hrodrigues1984/imap/license?format=flat)](https://packagist.org/packages/hrodrigues1984/imap)
 
 A PHP 5.4+ library to read and process e-mails over IMAP.
 
@@ -12,10 +13,6 @@ Installation
 
 Make sure the [PHP IMAP extension](http://php.net/manual/en/book.imap.php)
 is installed. For instance on Debian:
-
-```bash
-# apt-get install php5-imap
-```
 
 The recommended way to install the IMAP library is through [Composer](http://getcomposer.org):
 
