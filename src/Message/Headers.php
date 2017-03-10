@@ -58,6 +58,7 @@ class Headers extends Parameters
                 return $this->decodeEmailAddress(current($value));
             case 'to':
                 // no break
+            case 'bcc':
             case 'cc':
                 $emails = [];
                 foreach ($value as $address) {

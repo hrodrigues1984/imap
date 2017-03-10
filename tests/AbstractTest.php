@@ -12,7 +12,11 @@ abstract class AbstractTest extends \PHPUnit_Framework_TestCase
 
     public static function setUpBeforeClass()
     {
-        $server = new Server('imap.gmail.com');
+        if (false === \getenv('EMAIL_SERVER')) {
+            throw new \RuntimeException(
+                'Please set environment variable EMAIL_SERVER before running functional tests'
+            );
+        }
 
         if (false === \getenv('EMAIL_USERNAME')) {
             throw new \RuntimeException(
@@ -25,6 +29,8 @@ abstract class AbstractTest extends \PHPUnit_Framework_TestCase
                 'Please set environment variable EMAIL_PASSWORD before running functional tests'
             );
         }
+
+        $server = new Server(\getenv('EMAIL_SERVER'));
 
         static::$connection = $server->authenticate(\getenv('EMAIL_USERNAME'), \getenv('EMAIL_PASSWORD'));
     }
@@ -67,12 +73,6 @@ abstract class AbstractTest extends \PHPUnit_Framework_TestCase
      */
     protected function deleteMailbox(Mailbox $mailbox)
     {
-        // Move all messages in the mailbox to Gmail trash
-        $trash = self::getConnection()->getMailbox('[Gmail]/Bin');
-
-        foreach ($mailbox->getMessages() as $message) {
-            $message->move($trash);
-        }
         $mailbox->delete();
     }
 

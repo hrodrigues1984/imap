@@ -97,6 +97,22 @@ class MessageTest extends AbstractTest
         $this->assertEquals('Undisclosed recipients', $message->getSubject());
         $this->assertCount(0, $message->getTo());
     }
+
+    public function testMessageWithBcc()
+    {
+        $this->mailbox->addMessage($this->getFixture('email_with_bcc'));
+
+        $messages = $this->mailbox->getMessages();
+
+        //Retrives The only message in the folder
+        $message = $this->mailbox->getMessage($messages[0]);
+
+
+        $bcc = $message->getBcc();
+        $this->assertInstanceOf('\Ddeboer\Imap\Message\EmailAddress', $bcc[0]);
+        $this->assertEquals('With bcc', $bcc[0]->getName());
+        $this->assertEquals('ping@pong.com', $bcc[0]->getAddress());
+    }
     
     public function testDelete()
     {
