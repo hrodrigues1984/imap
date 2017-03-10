@@ -20,7 +20,7 @@ is installed. For instance on Debian:
 The recommended way to install the IMAP library is through [Composer](http://getcomposer.org):
 
 ```bash
-$ composer require ddeboer/imap
+$ composer require hrodrigues1984/imap
 ```
 
 This command requires you to have Composer installed globally, as explained
@@ -190,9 +190,6 @@ file_put_contents(
 
 Running the Tests
 -----------------
-
-This library is functionally tested on [Travis CI](https://travis-ci.org/ddeboer/imap)
-against the Gmail IMAP server.
 
 If you have your own IMAP (test) account, you can run the tests locally by 
 providing your IMAP (e.g., Gmail) credentials:

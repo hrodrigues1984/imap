@@ -1,5 +1,5 @@
 {
-    "name": "ddeboer/imap",
+    "name": "hrodrigues1984/imap",
     "description": "Object-oriented IMAP for PHP",
     "keywords": [ "email", "mail", "imap" ],
     "license": "MIT",
@@ -7,6 +7,10 @@
         {
             "name": "David de Boer",
             "email": "david@ddeboer.nl"
+        },
+        {
+            "name": "Hugo Rodrigues",
+            "email": "hrodrigues1984@hotmail.com"
         },
         {
             "name": "Community contributors",
