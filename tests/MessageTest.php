@@ -112,6 +112,28 @@ class MessageTest extends AbstractTest
         $this->assertEquals('With bcc', $bcc[0]->getName());
         $this->assertEquals('ping@pong.com', $bcc[0]->getAddress());
     }
+
+    public function testMessageWithReferences()
+    {
+        $this->mailbox->addMessage($this->getFixture('email_with_bcc'));
+
+        $messages = $this->mailbox->getMessages();
+
+        $message = $this->mailbox->getMessage($messages[0]);
+
+        $this->assertEquals('<1@some.mail.com>,<2@some.mail.com>', $message->getReferences());
+    }
+
+    public function testMessageWithInReplyTo()
+    {
+        $this->mailbox->addMessage($this->getFixture('email_with_bcc'));
+
+        $messages = $this->mailbox->getMessages();
+
+        $message = $this->mailbox->getMessage($messages[0]);
+
+        $this->assertEquals('<2@some.mail.com>', $message->getInReplyTo());
+    }
     
     public function testDelete()
     {

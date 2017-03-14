@@ -1,5 +1,7 @@
 Bcc: With bcc <ping@pong.com>
 Subject: test
+References: <1@some.mail.com>,<2@some.mail.com>
+In-Reply-To: <2@some.mail.com>
 
 Test with bcc
 

@@ -77,13 +77,33 @@ class Message extends Message\Part
     }
 
     /**
-     * Get Cc recipients
+     * Get Bcc recipients
      *
      * @return EmailAddress[] Empty array in case message has no CC: recipients
      */
     public function getBcc()
     {
         return $this->getHeaders()->get('bcc') ?: [];
+    }
+
+    /**
+     * Get InReplyTo value
+     *
+     * @return string
+     */
+    public function getInReplyTo()
+    {
+        return $this->getHeaders()->get('in_reply_to') ?: null;
+    }
+
+    /**
+     * Get References value
+     *
+     * @return string
+     */
+    public function getReferences()
+    {
+        return $this->getHeaders()->get('references') ?: null;
     }
 
     /**

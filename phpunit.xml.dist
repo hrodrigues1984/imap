@@ -7,8 +7,8 @@
         </testsuite>
     </testsuites>
     <php>
-        <env name="EMAIL_SERVER" value="imap.mail.yahoo.com"/>
-        <env name="EMAIL_USERNAME" value="imaptest@yahoo.com"/>
-        <env name="EMAIL_PASSWORD" value="onepassword"/>
+        <env name="EMAIL_SERVER" value="imap.mail.com"/>
+        <env name="EMAIL_USERNAME" value="some@mail.com"/>
+        <env name="EMAIL_PASSWORD" value="somepassword"/>
     </php>
 </phpunit>
