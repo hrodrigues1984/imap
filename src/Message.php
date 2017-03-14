@@ -280,6 +280,8 @@ class Message extends Message\Part
         if (!imap_delete($this->stream, $this->messageNumber, \FT_UID)) {
             throw new MessageDeleteException($this->messageNumber);
         }
+
+        imap_expunge($this->stream);
     }
 
     /**

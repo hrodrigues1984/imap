@@ -79,15 +79,15 @@ abstract class AbstractTest extends \PHPUnit_Framework_TestCase
     protected function createTestMessage(
         Mailbox $mailbox,
         $subject = 'Don\'t panic!',
-        $contents = 'Don\'t forget your towel',
+        $body = 'Don\'t forget your towel',
         $from = 'someone@there.com',
         $to = 'me@here.com'
     ) {
-        $message = "From: $from\r\n"
-            . "To: $to\r\n"
-            . "Subject: $subject\r\n"
-            . "\r\n"
-            . "$contents";
+        $message = str_replace(
+            [ '{{subject}}', '{{body}}', '{{from}}', '{{to}}' ],
+            [ $subject, $body, $from, $to ],
+            file_get_contents(__DIR__ . '/fixtures/email')
+        );
 
         $mailbox->addMessage($message);
     }

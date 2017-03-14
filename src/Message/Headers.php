@@ -64,7 +64,6 @@ class Headers extends Parameters
                 foreach ($value as $address) {
                     $emails[] = $this->decodeEmailAddress($address);
                 }
-            
                 return $emails;
             case 'subject':
                 return $this->decode($value);

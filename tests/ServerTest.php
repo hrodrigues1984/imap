@@ -11,7 +11,7 @@ class ServerTest extends \PHPUnit_Framework_TestCase
      */
     public function testFailedAuthenticate()
     {
-        $server = new Server('imap.gmail.com');
+        $server = new Server(\getenv('EMAIL_SERVER'));
         $server->authenticate('fake_username', 'fake_password');
     }
 }

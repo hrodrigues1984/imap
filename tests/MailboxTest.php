@@ -36,6 +36,7 @@ class MailboxTest extends AbstractTest
     public function testGetMessages()
     {
         $i = 0;
+
         foreach ($this->mailbox->getMessages() as $message) {
             $i++;
         }

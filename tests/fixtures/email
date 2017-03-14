@@ -1,0 +1,6 @@
+From: {{from}}
+To: {{to}}
+Subject: {{subject}}
+
+{{body}}
+ 
