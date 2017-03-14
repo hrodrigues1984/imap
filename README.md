@@ -6,7 +6,7 @@ IMAP library
 [![Latest Unstable Version](https://poser.pugx.org/hrodrigues1984/imap/v/unstable)](https://packagist.org/packages/hrodrigues1984/imap)
 [![License](https://poser.pugx.org/hrodrigues1984/imap/license?format=flat)](https://packagist.org/packages/hrodrigues1984/imap)
 
-A PHP 5.4+ library to read and process e-mails over IMAP.
+A PHP 5.5+ library to read and process e-mails over IMAP.
 
 Installation
 ------------
@@ -32,7 +32,7 @@ Usage
 ```php
 use Ddeboer\Imap\Server;
 
-$server = new Server('imap.gmail.com');
+$server = new Server('imap.mail.com');
 
 // $connection is instance of \Ddeboer\Imap\Connection
 $connection = $server->authenticate('my_username', 'my_password');
@@ -69,7 +69,7 @@ foreach ($mailboxes as $mailbox) {
 Or retrieve a specific mailbox:
 
 ```php
-$mailbox = $connection->getMailbox('INBOX');
+$mailbox = $connection->getMailbox('Inbox');
 ```
 
 Delete a mailbox:
@@ -189,17 +189,10 @@ Running the Tests
 -----------------
 
 If you have your own IMAP (test) account, you can run the tests locally by 
-providing your IMAP (e.g., Gmail) credentials:
+providing your IMAP (e.g., Email Provider) credentials:
 
 ```bash
 $ composer install --dev
-$ EMAIL_USERNAME="your_username" EMAIL_PASSWORD="your_password" vendor/bin/phpunit
-```
-
-You can also set an `EMAIL_SERVER` variable, which defaults to `imap.gmail.com`:
-
-```bash
-$ EMAIL_USERNAME="your_username" EMAIL_PASSWORD="your_password" EMAIL_SERVER="imap.you.com" vendor/bin/phpunit
-
+$ EMAIL_USERNAME="your_username" EMAIL_PASSWORD="your_password" EMAIL_SERVER="imap.mail.com" vendor/bin/phpunit
 ```
 
