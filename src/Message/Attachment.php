@@ -19,6 +19,28 @@ class Attachment extends Part
     }
 
     /**
+     * Get attachment content-type
+     *
+     * @return string
+     */
+    public function getContentType()
+    {
+        return $this->getType()
+            ? strtolower($this->getType() . '/' . $this->getSubtype())
+            : null;
+    }
+
+    /**
+     * Get attachment content-disposition
+     *
+     * @return string
+     */
+    public function getContentDisposition()
+    {
+        return $this->getDisposition();
+    }
+
+    /**
      * Get attachment file size
      *
      * @return int Number of bytes

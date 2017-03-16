@@ -171,6 +171,35 @@ class MessageTest extends AbstractTest
             'Prostřeno_2014_poslední volné termíny.xls',
             $attachment->getFilename()
         );
+        $this->assertEquals(
+            'application/vnd.ms-excel',
+            $attachment->getContentType()
+        );
+        $this->assertEquals(
+            'attachment',
+            $attachment->getContentDisposition()
+        );
+    }
+
+    public function testAttachmentDispositionAndType()
+    {
+        $this->mailbox->addMessage($this->getFixture('attachment_encoded_filename'));
+
+        $messages = $this->mailbox->getMessages();
+
+        $message = $this->mailbox->getMessage($messages[0]);
+
+        $this->assertCount(1, $message->getAttachments());
+        $attachment = $message->getAttachments()[0];
+
+        $this->assertEquals(
+            'application/vnd.ms-excel',
+            $attachment->getContentType()
+        );
+        $this->assertEquals(
+            'attachment',
+            $attachment->getContentDisposition()
+        );
     }
     
     public function getAttachmentFixture()
